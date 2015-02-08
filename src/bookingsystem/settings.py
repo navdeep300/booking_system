@@ -61,8 +61,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bookingsystem', #please enter your mysql username and password
-	'USER': 'mysql username',
-	'PASSWORD': 'mysql pwd',
+	'USER': 'root',
+	'PASSWORD': '1234',
 	'HOST': 'localhost' ,
 	'PORT': '',
     }

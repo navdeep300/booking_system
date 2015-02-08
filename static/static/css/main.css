@@ -1,0 +1,25 @@
+body {
+   background-image: linear-gradient(to bottom, #5CB85C 200px, #419641 100%);
+}
+
+.header {
+	margin: 20% 0px 0 0;
+	font-weight: bolder;
+	box-shadow: 5px 5px 5px 0;
+}
+
+.tagline {
+	margin: 2% 0px 40% 0;
+}
+
+h1 {
+	font-size: 400%;
+}
+
+.content {
+	margin-bottom: 30%;
+}
+
+.back-button {
+	margin: 5px 0 0 10px;
+}
