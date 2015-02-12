@@ -4,25 +4,13 @@ from django.shortcuts import render
 #from .forms import BookingForm
 
 def home(request):
-		#form = BookingForm()
-		context = {}
-		template = "home.html"
-		return render(request, template, context)
+		return render(request, "home.html", {})
 
 def book(request):
-		#form = BookingForm()
-		context = {}
-		template = "book.html"
-		return render(request, template, context)
+		return render(request, "book.html", {})
 
 def view(request):
-		#form = BookingForm()
-		context = {}
-		template = "view.html"
-		return render(request, template, context)
+		return render(request, "view.html", {})
 
 def cancel(request):
-		#form = BookingForm()
-		context = {}
-		template = "cancel.html"
-		return render(request, template, context)
+		return render(request, "cancel.html", {})
