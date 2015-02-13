@@ -1,14 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
+from django.contrib import auth 
 
 # Create your views here.
-# from .forms import BookingForm
-
-# def home(request):
-# 		form = BookingForm()
-# 		context = {"form": form}
-# 		template = "home.html"
-# 		return render(request, template, context)
-
 def home(request):
 		return render(request, "home.html", {})
 
@@ -20,3 +13,19 @@ def view(request):
 
 def cancel(request):
 		return render(request, "cancel.html", {})
+
+
+def login_view(request):
+	username = request.POST.get('username', '')
+	password = request.POST.get('password', '')
+	user = auth.authenticate(username=username, password=password)
+	if user is not None and user.is_active:
+		auth.login(request, user)
+		return HttpResponseRedirect("/account/loggedin/")
+	else:
+		return HttpResponseRedirect("/account/invalid/")
+
+def logout_view(request):
+	auth.logout(request)
+	return HttpResponseRedirect("/accounts/loggedout/")
+

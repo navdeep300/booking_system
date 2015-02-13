@@ -8,7 +8,7 @@
 	</head>
 	<body>
 
-<a href="http://127.0.0.1:8000" class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
+<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
 		{% block content %}
 
 		{% endblock %}
