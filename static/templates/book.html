@@ -1,7 +1,11 @@
-{% extends "base.html" %}
-
+<div class="bg">{% extends "base.html" %}
+</div>
 {% block content %}
-<center>
-<h1>Click to Book Page</h1>
-</center>
+<div class="block-book">
+<h1>Book Hall</h1>
+<form method="POST" action=""> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Proceed' class='btn' />
+</form>
+</div>
 {% endblock %}

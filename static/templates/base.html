@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="bg">
 	<head>
 		<link href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 		<link href="../static/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
@@ -9,8 +9,10 @@
 	<body>
 
 <a href="http://127.0.0.1:8000" class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
-		{% block content %}
+		<div>
+			{% block content %}
 
-		{% endblock %}
+			{% endblock %}
+		</div>
 	</body>
 </html>
