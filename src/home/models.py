@@ -6,7 +6,7 @@ class Booking(models.Model):
 	date = models.DateField(auto_now = False, auto_now_add = False)
 	start_time = models.TimeField(auto_now=False, auto_now_add=False)
 	end_time = models.TimeField(auto_now=False, auto_now_add=False)
-	email = models.EmailField(max_length=50, unique=True)
+	email = models.EmailField(max_length=50, unique=False)
 	event_name = models.CharField(max_length=50, unique=True)
 	name = models.CharField(max_length=50)
 	status = models.BooleanField(default=False)
