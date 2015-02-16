@@ -1,5 +1,8 @@
-body {
+/*.bg {
    background-image: linear-gradient(to bottom, #5CB85C 200px, #419641 100%);
+   background-size: 100% 100%;
+   background-repeat: no-repeat;
+
 }
 
 .header {
@@ -17,9 +20,21 @@ h1 {
 }
 
 .content {
-	margin-bottom: 15%;
+	margin-bottom: 19.7%;
 }
 
 .back-button {
 	margin: 5px 0 0 10px;
+}
+*/
+.bg {
+	background-image: linear-gradient(to bottom, #5CB85C 200px, #419641 100%);
+}
+
+.block-home {
+	text-align: center;
+}
+
+.block-book {
+	text-align: center;
 }
