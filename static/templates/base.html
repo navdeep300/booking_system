@@ -8,7 +8,14 @@
 	</head>
 	<body>
 
-<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
+		<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
+		
+		{% if user.is_anonymous %}
+			<a href='{% url "login" %}' class="btn btn-primary btn-sm back-button">Login</a>
+		{% else %}	
+			<a href='{% url "logout" %}' class="btn btn-primary btn-sm back-button">Logout</a>
+		{% endif %}
+
 		{% block content %}
 
 		{% endblock %}

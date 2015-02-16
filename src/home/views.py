@@ -1,31 +1,34 @@
-from django.shortcuts import render, HttpResponseRedirect
-from django.contrib import auth 
+from django.shortcuts import render, HttpResponseRedirect,render_to_response
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required
 def home(request):
-		return render(request, "home.html", {})
+		return render(request, "home.html")
 
 def book(request):
-		return render(request, "book.html", {})
+		return render(request, "book.html")
 
 def view(request):
-		return render(request, "view.html", {})
+		return render(request, "view.html")
 
 def cancel(request):
-		return render(request, "cancel.html", {})
+		return render(request, "cancel.html")
 
 
-def login_view(request):
-	username = request.POST.get('username', '')
-	password = request.POST.get('password', '')
-	user = auth.authenticate(username=username, password=password)
-	if user is not None and user.is_active:
-		auth.login(request, user)
-		return HttpResponseRedirect("/account/loggedin/")
-	else:
-		return HttpResponseRedirect("/account/invalid/")
+# def login(request):
+# 	username = request.POST['username']
+# 	password = request.POST['password']
+# 	user = authenticate(username=username, password=password)
+	
+# 	if user is not None and user.is_active:
+# 		login(request, user)
+# 		return HttpResponseRedirect("home.html")
+# 	else:
+# 		return HttpResponseRedirect("invalid_login.html")
 
-def logout_view(request):
-	auth.logout(request)
-	return HttpResponseRedirect("/accounts/loggedout/")
 
+# def logout(request):
+# 		logout(request)
+#		return render(request,'logout.html')
