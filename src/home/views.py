@@ -1,6 +1,7 @@
-from django.shortcuts import render, HttpResponseRedirect,render_to_response
-from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render
+from django.http import HttpResponseRedirect 
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 
 from .forms import BookingForm
 from .models import Booking
@@ -8,8 +9,9 @@ from .models import Booking
 # Create your views here.
 @login_required
 def home(request):
-		return render(request, "home.html")
+		return render(request, "home/home.html", {})
 
+@login_required
 def book(request):
 
 	form = BookingForm(request.POST or None)
@@ -29,27 +31,20 @@ def book(request):
 		# 	print hall_entry, created3, email_join, created, date, created2
 
 	context = {"form": form}
-	return render(request, "book.html", context)
+	return render(request, "home/book.html", context)
 
 
+@login_required
 def view(request):
-		return render(request, "view.html")
+		return render(request, "home/view.html", {})
 
+@login_required
 def cancel(request):
-		return render(request, "cancel.html")
-
-# def login(request):
-# 	username = request.POST['username']
-# 	password = request.POST['password']
-# 	user = authenticate(username=username, password=password)
-	
-# 	if user is not None and user.is_active:
-# 		login(request, user)
-# 		return HttpResponseRedirect("home.html")
-# 	else:
-# 		return HttpResponseRedirect("invalid_login.html")
+		return render(request, "home/cancel.html", {})
 
 
-# def logout(request):
-# 		logout(request)
-#		return render(request,'logout.html')
+def logout_view(request):
+		from django.contrib.auth.views import logout
+ 		logout(request)
+		# return HttpResponseRedirect(reverse("home.views.home"))
+		return render(request, "registration/logout.html")
