@@ -11,7 +11,7 @@ a = ('2015', '2016', '2017')
 
 
 class BookingForm(forms.ModelForm):
-	date = forms.DateField(widget=SelectDateWidget(years=a))
+	#date = forms.DateField(widget=SelectDateWidget(years=a))
 
 	class Meta:
 		model = Booking 

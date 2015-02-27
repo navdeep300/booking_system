@@ -36,7 +36,8 @@ def book(request):
 
 @login_required
 def view(request):
-		return render(request, "home/view.html", {})
+		boo = Booking.objects.filter(status =1)
+		return render(request, "home/view.html", {'boo': boo})
 
 @login_required
 def cancel(request):
