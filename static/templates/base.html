@@ -11,7 +11,7 @@
 		<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
 		
 		{% if user.is_anonymous %}
-			<a href='/accounts/login/' class="btn btn-primary btn-sm back-button">Login</a>
+			<a href="{% url 'home.views.home' %}" class="btn btn-primary btn-sm back-button">Login</a>
 		{% else %}	
 			<a href="{% url 'home.views.logout_view' %}" class="btn btn-primary btn-sm back-button">Logout</a>
 		{% endif %}
