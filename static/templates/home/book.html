@@ -6,22 +6,17 @@
 <h1>Book Hall</h1>
 <form method="POST" action=""> {% csrf_token %}
 {{ form.as_p }}
-        <div class="form-row field-date">
-            
-            
-                <div>
-                    
-                    
-                        <label class="required" for="id_date">Date:</label>
-                        
-                            <input class="vDateField" id="id_date" name="date" size="10" type="text" />
-                        
-                    
-                    
-                </div>
-            
+<!-- 
+    <div class="form-row field-date">    
+        <div>
+
+        	<label class="required" for="id_date">Date:</label>
+        	<input class="vDateField" id="id_date" name="date" size="10" type="text" />
+
         </div>
- 
+    
+    </div>
+  -->
 <input type='submit' value='Proceed' class='btn' />
 </form>
 </div>
