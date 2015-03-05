@@ -17,4 +17,3 @@ Booking System is a web application being developed using Django framework.<br /
 <em>python manage.py runserver</em>
 
 Now open up your browser and welcome to the new world =)
-
