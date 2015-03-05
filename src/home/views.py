@@ -19,7 +19,7 @@ def book(request):
 	if form.is_valid():
 		save_it = form.save(commit=False)
 		save_it.save()
-
+		return render(request, "home/thanks.html", {})
 	context = {"form": form}
 	return render(request, "home/book.html", context)
 
