@@ -20,19 +20,16 @@
 		
 		<link href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 		<link href="../static/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
-		<!-- <link href="../static/css/main.css" type="text/css" rel="stylesheet"> -->
-
-	
+		<link href="../static/css/main.css" type="text/css" rel="stylesheet">
 	</head>
 	<body>
 
-   
-		<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Works only if localhost port is 8000">Home</a>
+		<a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Homepage">Home</a>
 		
 		{% if user.is_anonymous %}
-			<a href="{% url 'home.views.home' %}" class="btn btn-primary btn-sm back-button">Login</a>
+			<a href="{% url 'home.views.home' %}" class="btn btn-primary btn-sm back-button" title="Login">Login</a>
 		{% else %}	
-			<a href="{% url 'home.views.logout_view' %}" class="btn btn-primary btn-sm back-button">Logout</a>
+			<a href="{% url 'home.views.logout_view' %}" class="btn btn-primary btn-sm back-button" title="Logout">Logout</a>
 		{% endif %}
 
 		{% block content %}

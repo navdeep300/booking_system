@@ -37,5 +37,5 @@ def cancel(request):
 def logout_view(request):
 		from django.contrib.auth.views import logout
  		logout(request)
-		# return HttpResponseRedirect(reverse("home.views.home"))
-		return render(request, "registration/logout.html")
+		return HttpResponseRedirect(reverse("home.views.home"))
+		# return render(request, "registration/logout.html")

@@ -2,31 +2,31 @@
 
 
 {% block content %}
-	<h1>View Bookings Page</h1>
+	<h1>Current Bookings</h1>
  	<div>
 		<table border="5">
-	 	<tr>
-	 		<th>Sr.</th>
-	 		<th>Event Name</th>
-	 		<th>Venue</th>
-	 		<th>Date</th>
-	 		<th>Start Time</th>
-	 		<th>End time</th>
-	 		<th>Organizer Name</th>
-	 		<th>Email ID</th>
-	 	</tr>
-	 	{% for value in boo %}
-	 	<tr>
-	 		<td>{{ forloop.counter }}</td>
-	 		<td>{{ value }}</td> 
-	 		<td>{{ value.hall }}</td>
-	 		<td>{{ value.date }}</td>
-	 		<td>{{ value.start_time }}</td>
-	 		<td>{{ value.end_time }}</td>
-	 		<td>{{ value.name }}</td>
-	 		<td>{{ value.email }}</td>
-		</tr>
-		{% endfor %}
+		 	<tr>
+		 		<th>Sr.</th>
+		 		<th>Event Name</th>
+		 		<th>Venue</th>
+		 		<th>Date</th>
+		 		<th>Start Time</th>
+		 		<th>End time</th>
+		 		<th>Organizer Name</th>
+		 		<th>Email ID</th>
+		 	</tr>
+		 	{% for value in boo %}
+			 	<tr>
+			 		<td>{{ forloop.counter }}</td>
+			 		<td>{{ value }}</td> 
+			 		<td>{{ value.hall }}</td>
+			 		<td>{{ value.date }}</td>
+			 		<td>{{ value.start_time }}</td>
+			 		<td>{{ value.end_time }}</td>
+			 		<td>{{ value.name }}</td>
+			 		<td>{{ value.email }}</td>
+				</tr>
+			{% endfor %}
 		</table>
  	</div>
  	
