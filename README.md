@@ -137,4 +137,4 @@ Ramandeep Singh
 
  >Blog: [http://ramanvirdiz.wordpress.com](http://ramanvirdiz.wordpress.com)
 
-<img height="200" ![Picture](https://avatars1.githubusercontent.com/u/7791892?v=3&s=400)
+<img height="200" src="https://avatars1.githubusercontent.com/u/7791892?v=3&s=400">
