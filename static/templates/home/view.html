@@ -15,7 +15,8 @@
 		 		<th>Organizer Name</th>
 		 		<th>Email ID</th>
 		 	</tr>
-		 	{% for value in boo %}
+		 	<!-- The for loop outputs the information related to the Booking whose status is 1(true) -->
+		 	{% for value in booking %}
 			 	<tr>
 			 		<td>{{ forloop.counter }}</td>
 			 		<td>{{ value }}</td> 

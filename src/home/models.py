@@ -10,14 +10,13 @@ class Booking(models.Model):
 	date = models.DateField(auto_now=False, auto_now_add=False)
 	start_time = models.TimeField(auto_now=False, auto_now_add=False)
 	end_time = models.TimeField(auto_now=False, auto_now_add=False)
-	name = models.CharField(max_length=50)
-	email = models.EmailField('Email', max_length=50)
-	event_name = models.CharField(max_length=50, unique=True)
+	name = models.CharField(max_length=30)
+	email = models.EmailField('Email', max_length=30)
+	event_name = models.CharField(max_length=30)
 	status = models.BooleanField(default=False)
 	
-	
 	class Meta:
-    		unique_together = ('hall', 'start_time', 'end_time',)
+    		unique_together = ('hall', 'date', 'start_time', 'end_time',)
 	
 	def __unicode__(self):
 		return self.event_name	
