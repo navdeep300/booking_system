@@ -9,7 +9,6 @@ Table of Contents
 * [Installation](#install)
 * [Team Members](#team)
 
-Please see our ]() before  reporting an issue.
 
 <a name="intro"></a>Introduction
 -
