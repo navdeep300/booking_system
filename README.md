@@ -57,9 +57,9 @@ For the installation of Requiremets listed above, run the following commands in 
     - virtualenv venv
     - source venv/bin/activate
  
-0. <a name="django"></a>Django 1.7
+0. <a name="django"></a>Django 1.7.3
 
-        $ pip install django
+        $ pip install django==1.7.3
 
 0. <a name="mysql-py"></a>mysql-python
 
