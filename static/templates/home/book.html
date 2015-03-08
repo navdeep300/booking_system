@@ -5,16 +5,15 @@
 	<link rel="stylesheet" href="../../static/css/style.css">
     <script src="../../static/js/jquery-ui.js"></script>
     <script src="../../static/js/jquery-1.10.2.js"></script>
-		
-
 {% endblock %} -->
 
+{% block title %}Book Hall{% endblock %}
 {% block content %}
-	<div class="block-book">
+	<div class="block-book" style="background-color: transparent;">
 		<h1>Book Hall</h1>
 		<form method="POST" action=""> {% csrf_token %}
 			{{ form.as_p }}
-			<input type='submit' value='Proceed' class='btn' />
+			<input type='submit' value='Proceed' class='round-button' />
 		</form>
 	</div>
 {% endblock %}
