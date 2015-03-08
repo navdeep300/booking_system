@@ -1,21 +1,77 @@
+{% load i18n %} 
+{% load staticfiles %}
 <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 
-<html>
-	<head>
-		<title>{% block title %}{% endblock %}</title>
-	    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-		<!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
-		<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" /> -->
-		<!-- [if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif] -->
+	<link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet">
+<!-- 
+	<style>
+		label {
+			display: inline-block;
+			width: 5em;
+		}
 
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-		<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
-		<script src="https://raw.githubusercontent.com/jonthornton/jquery-timepicker/master/jquery.timepicker.min.js"></script>
-		<!--  {% block extrastyle %}
-		 {% endblock %} -->
-		<script>
+		fieldset {
+			border: 0;
+		}
+		/*label, label#id_start_time{
+		display: block;
+		margin: 10px 0 0 0;
+		}*/
+		select ,.vDateField, #id_start_time, #id_end_time, #id_event_name, #id_name, #id_email {
+			width: 200px;
+		}
+		.overflow {
+			height: auto;
+		}
+	</style>
+ -->		
+	{% block extrastyle %}{% endblock %}
+	
+
+
+</head>
+<body class="bg">
+<!--
+
+ Fixed navbar 
+
+-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	
+		<span id="buttons"><a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Homepage">Home</a>
+		
+		{% if user.is_anonymous %}
+			<a href="{% url 'home.views.home' %}" class="btn btn-primary btn-sm back-button" title="Login">Login</a>
+		{% else %}	
+			<a href="{% url 'home.views.logout_view' %}" class="btn btn-primary btn-sm back-button" title="Logout">Logout</a>
+		{% endif %}
+		</span>
+		<span class="booksys">Booking System</span>
+	</nav>
+    <div class="container">
+<!--
+
+ /container 
+
+-->
+	{% block content %}
+
+	{% endblock %}
+
+	</div>
+
+	<script src="{% static 'bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery-1.10.2.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+
+	<script type=text/javascript>
 		$(function() {
 		$( "#id_date" ).datepicker();
 		});
@@ -25,7 +81,7 @@
 			.selectmenu( "menuWidget" )
 			.addClass( "overflow" );
 			});
-	
+
 		$(function() {
 			$('#id_start_time').timepicker({ 'forceRoundTime': true }).removeClass( "overflow")
 		});
@@ -33,60 +89,9 @@
 		$(function() {
 		$( document ).tooltip();
 		});
-		</script>
-<style>
-
-label {
-display: inline-block;
-width: 5em;
-}
-
-fieldset {
-border: 0;
-}
-/*label, label#id_start_time{
-display: block;
-margin: 10px 0 0 0;
-}*/
-select ,.vDateField, #id_start_time, #id_end_time, #id_event_name, #id_name, #id_email {
-width: 200px;
-
-}
-.overflow {
-	height: auto;
-}
-</style>
-		<link href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-		<link href="../static/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
-		<link href="../static/css/main.css" type="text/css" rel="stylesheet">
-	</head>
-	<body class="bg">
-    <!--
-
-     Fixed navbar 
-
-    -->
-    	<nav class="navbar navbar-default navbar-fixed-top">
-		
-			<span id="buttons"><a href='{% url "home" %}' class="btn btn-primary btn-sm back-button" title="Homepage">Home</a>
-			
-			{% if user.is_anonymous %}
-				<a href="{% url 'home.views.home' %}" class="btn btn-primary btn-sm back-button" title="Login">Login</a>
-			{% else %}	
-				<a href="{% url 'home.views.logout_view' %}" class="btn btn-primary btn-sm back-button" title="Logout">Logout</a>
-			{% endif %}
-			</span>
-			<span class="booksys">Booking System</span>
-		</nav>
-	    <div class="container">
-    <!--
-
-     /container 
-
-    -->
-		{% block content %}
-
-		{% endblock %}
-		</div>
-	</body>
+	</script>
+	
+</body>
 </html>
+
+

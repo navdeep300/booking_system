@@ -1,13 +1,12 @@
 {% extends "base.html" %}
-<!-- {% load staticfiles %}
-{% block extrastyle %}
-	<link rel="stylesheet" href="../../static/css/jquery-ui.css">
-	<link rel="stylesheet" href="../../static/css/style.css">
-    <script src="../../static/js/jquery-ui.js"></script>
-    <script src="../../static/js/jquery-1.10.2.js"></script>
-{% endblock %} -->
-
 {% block title %}Book Hall{% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/jquery-ui.css">
+    <script src="{{ STATIC_URL }}js/jquery-ui.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery-1.10.2.js"></script>
+{% endblock %}
+
 {% block content %}
 	<div class="block-book" style="background-color: transparent;">
 		<h1>Book Hall</h1>

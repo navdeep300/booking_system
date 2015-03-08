@@ -27,6 +27,12 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = []
 
 
+# Templates Location
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
+)
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -64,12 +70,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bookingsystem',
-    	'USER': 'root',
-    	'PASSWORD':'1234',
-    	'HOST': 'localhost' ,
-    	'PORT': '',
+        'USER': 'root',
+        'PASSWORD':'1234',
+        'HOST': 'localhost' ,
+        'PORT': '',
     }
 }
+
+
+"""
+This will automatically redirect to the login_url if the user is not logged in, it is called when using @login_required
+"""
+LOGIN_URL = 'accounts/login/'
+# LOGIN_REDIRECT_URL = '/'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -84,23 +98,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-"""
-This will automatically redirect to the login_url if the user is not logged in, it is called when using @login_required
-"""
-LOGIN_URL = 'accounts/login/'
-# LOGIN_REDIRECT_URL = '/'
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-# Templates Location
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), "static", "templates"),
-)
 
 """
 Paths of the static, media and static_only files in the static folder
@@ -112,3 +114,8 @@ if DEBUG:
     STATICFILES_DIRS = (
         os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
     )
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
