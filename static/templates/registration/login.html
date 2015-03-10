@@ -1,6 +1,18 @@
-{% extends 'base.html' %}
+{% load i18n %} 
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login page</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 
-{% block content %}
+	<link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-theme.min.css' %}" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
 	<p>
 	<div>
 		{% if form.errors %}
@@ -25,4 +37,6 @@
 		</form>
 	</div>
 	</p>
-{% endblock %}
+
+</body>
+</html>

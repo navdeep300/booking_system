@@ -1,4 +1,4 @@
-label {
+/*label {
     display: inline-block;
     width: 5em;
 }
@@ -6,17 +6,17 @@ label {
 fieldset {
     border: 0;
 }
-/*label, label#id_start_time{
+label, label#id_start_time{
 display: block;
 margin: 10px 0 0 0;
-}*/
+}
 select ,.vDateField, #id_start_time, #id_end_time, #id_event_name, #id_name, #id_email {
     width: 200px;
 }
 .overflow {
     height: auto;
 }
-
+*/
 .bg{
    background-image: linear-gradient(to bottom, #DADADA 768px, rgb(237, 195, 12) 100%);
 }
