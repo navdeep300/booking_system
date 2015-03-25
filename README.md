@@ -133,7 +133,10 @@ Mandeep Singh
 Navdeep Singh
 -
  >Contact: <navdeepsaini48@gmail.com>
+
  >Blog: [http://navdeepsaini48.wordpress.com](http://navdeepsaini48.wordpress.com) 
+
+<img height="200" src="https://avatars3.githubusercontent.com/u/7783847?v=3&u=0bed1b574d4616524760f9b7c94a9983bf4a4c1b&s=140">
 
 Ramandeep Singh
 -
